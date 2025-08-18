@@ -53,16 +53,22 @@
   package:
     name: "{{ dns_package }}"
     state: present
+  vars:
+    ansible_python_interpreter: /usr/bin/python
 
 - name: Gather the package facts
   package_facts:
     manager: auto
+  vars:
+    ansible_python_interpreter: /usr/bin/python
 
 - name: Install {{ ntp_package }} service if ntp or chrony is not installed
   package:
     name: "{{ ntp_package }}"
     state: present
   when: ('ntp' not in ansible_facts.packages) and ('chrony' not in ansible_facts.packages)
+  vars:
+    ansible_python_interpreter: /usr/bin/python
 
 - name: set ntp_service variable if chrony is installed
   set_fact:
@@ -79,6 +85,8 @@
   package:
     name: "{{ nscd_package }}"
     state: present
+  vars:
+    ansible_python_interpreter: /usr/bin/python
 
 - name: Enable nscd service
   service:
