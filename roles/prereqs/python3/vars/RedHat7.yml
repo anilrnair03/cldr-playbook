@@ -23,8 +23,6 @@ packages_to_install_for_python_3_8:
   - zlib-devel
 
 packages_for_psycopg2_3_8:
- - centos-release
- - centos-release-scl
  - xmlsec1  
  - xmlsec1-openssl
  - "rh-postgresql{{ postgres_version }}-postgresql-devel"
