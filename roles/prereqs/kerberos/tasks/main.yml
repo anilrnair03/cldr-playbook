@@ -25,7 +25,7 @@
   when: ansible_os_family == "Debian"
 
 - name: Install OpenLDAP client libraries
-  package:
+  yum:
     name: "{{ ldap_packages }}"
     state: present
   when: "'cloudera_manager' in group_names"
