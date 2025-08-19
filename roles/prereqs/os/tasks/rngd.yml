@@ -15,7 +15,7 @@
 ---
 
 - name: Install rngd
-  package:
+  yum:
     name: "{{ rngd_package }}"
     state: present
     update_cache: yes
