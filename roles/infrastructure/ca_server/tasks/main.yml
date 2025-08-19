@@ -19,12 +19,12 @@
     file: "{{ ansible_os_family }}.yml"
 
 - name: Install openssl
-  package:
+  yum:
     name: openssl
     state: present
 
 - name: Install PyOpenSSL
-  package:
+  yum:
     name: pyOpenSSL
     state: present
   when: ansible_os_family == "RedHat"
