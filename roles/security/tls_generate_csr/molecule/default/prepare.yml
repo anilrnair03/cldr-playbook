@@ -20,6 +20,6 @@
       include_role:
         name: ../prereqs/jdk
     - name: Install openssl
-      package:
+      yum:
         name: openssl
         state: present
