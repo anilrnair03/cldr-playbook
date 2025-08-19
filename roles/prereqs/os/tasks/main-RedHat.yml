@@ -21,7 +21,7 @@
   ignore_errors: yes
 
 - name: Install libselinux Package
-  package:
+  yum:
     name: "{{ item }}"
     state: present
   with_items:
