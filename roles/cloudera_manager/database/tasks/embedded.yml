@@ -15,7 +15,7 @@
 ---
 
 - name: Install Cloudera Manager embedded database
-  package:
+  yum:
     name:
     - cloudera-manager-server-db-2
     state: present
