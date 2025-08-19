@@ -19,7 +19,7 @@
     file: "{{ ansible_os_family }}.yml"
 
 - name: Install KRB5 server
-  package:
+  yum:
     name: "{{ krb5_packages }}"
     state: present
 
