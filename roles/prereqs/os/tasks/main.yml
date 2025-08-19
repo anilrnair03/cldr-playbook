@@ -50,20 +50,16 @@
   ignore_errors: yes
 
 - name: Install DNS utils package
-  package:
+  yum:
     name: "{{ dns_package }}"
     state: present
-  vars:
-    ansible_python_interpreter: /usr/bin/python
 
 - name: Gather the package facts
   package_facts:
     manager: auto
-  vars:
-    ansible_python_interpreter: /usr/bin/python
 
 - name: Install {{ ntp_package }} service if ntp or chrony is not installed
-  package:
+  yum:
     name: "{{ ntp_package }}"
     state: present
   when: ('ntp' not in ansible_facts.packages) and ('chrony' not in ansible_facts.packages)
@@ -82,11 +78,9 @@
     enabled: yes
 
 - name: Install nscd service
-  package:
+  yum:
     name: "{{ nscd_package }}"
     state: present
-  vars:
-    ansible_python_interpreter: /usr/bin/python
 
 - name: Enable nscd service
   service:
