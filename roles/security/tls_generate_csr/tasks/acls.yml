@@ -19,7 +19,7 @@
     file: "user_accounts.yml"
 
 - name: Install acls package
-  package:
+  yum:
     name: acl
     state: present
 
