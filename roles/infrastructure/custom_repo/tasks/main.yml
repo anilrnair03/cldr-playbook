@@ -19,7 +19,7 @@
     file: "{{ ansible_os_family }}.yml"
 
 - name: Install {{ httpd_package }}
-  package:
+  yum:
     name: "{{ httpd_package }}"
     state: present
 
