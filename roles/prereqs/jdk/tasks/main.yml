@@ -30,7 +30,7 @@
   when: jdk_package is not defined
 
 - name: Install JDK
-  package:
+  yum:
     name:
     - "{{ jdk_package }}"
     state: present
